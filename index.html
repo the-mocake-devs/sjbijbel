@@ -3,7 +3,6 @@
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1917341992266293"
      crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-1917341992266293">
     <link rel="icon" href="/icon" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +10,8 @@
     <title>Bijbelzoeker | SJB</title>
     <meta name="description" content="Zoek snel een Bijbelverwijzing en open ze rechtstreeks op Bible.com.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -196,21 +194,27 @@
                 <a class="bible-link" href="https://www.bible.com" target="_blank">Bible.com</a>
             </p>
 
-            <button class="credits-button" id="creditsButton" type="button" aria-label="Credits openen">
-                Credits
-            </button>
+            <div class="footer-buttons">
+                <button class="credits-button" id="creditsButton" type="button" aria-label="Credits openen">
+                    Credits
+                </button>
+                <button class="credits-button" id="privacyButton" type="button" aria-label="Privacybeleid openen">
+                    Privacybeleid
+                </button>
+            </div>
 
         </div>
 
     </footer>
 
+    <!-- Credits Overlay -->
     <div class="credits-overlay" id="creditsOverlay" aria-hidden="true">
 
         <div class="credits-card" role="dialog" aria-modal="true" aria-labelledby="creditsTitle">
 
             <div class="brand-logo2">
-    <img src="/logo.png" alt="SJB logo">
-</div>
+                <img src="/logo.png" alt="SJB logo">
+            </div>
 
             <h2 id="creditsTitle">Credits</h2>
 
@@ -229,6 +233,39 @@
             </div>
 
             <button class="credits-close" id="creditsClose" type="button">
+                Sluiten
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="credits-overlay" id="privacyOverlay" aria-hidden="true">
+
+        <div class="credits-card privacy-card" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+
+            <div class="brand-logo2">
+                <img src="/logo.png" alt="SJB logo">
+            </div>
+
+            <h2 id="privacyTitle">Privacybeleid</h2>
+
+            <div class="privacy-content">
+                <p>Wij hechten veel waarde aan jouw privacy. Op deze website verzamelen wij zelf geen persoonlijke gegevens of zoekopdrachten.</p>
+                
+                <h3>Google AdSense &amp; Cookies</h3>
+                <p>
+                    Deze website maakt gebruik van <strong>Google AdSense</strong> om advertenties weer te geven. 
+                    Google en andere externe leveranciers gebruiken cookies of web beacons om advertenties weer te geven op basis van eerdere bezoeken aan deze of andere websites.
+                </p>
+                <p>
+                    Je kunt je afmelden voor gepersonaliseerde advertenties via de 
+                    <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Advertentie-instellingen van Google</a> 
+                    of via <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>.
+                </p>
+            </div>
+
+            <button class="credits-close" id="privacyClose" type="button">
                 Sluiten
             </button>
 
