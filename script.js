@@ -1,27 +1,52 @@
-    const creditsButton = document.getElementById('creditsButton');
-    const creditsOverlay = document.getElementById('creditsOverlay');
-    const creditsClose = document.getElementById('creditsClose');
 
-    function openCredits() {
-        creditsOverlay.classList.add('active');
-        creditsOverlay.setAttribute('aria-hidden', 'false');
+const creditsButton = document.getElementById('creditsButton');
+const creditsOverlay = document.getElementById('creditsOverlay');
+const creditsClose = document.getElementById('creditsClose');
+
+const privacyButton = document.getElementById('privacyButton');
+const privacyOverlay = document.getElementById('privacyOverlay');
+const privacyClose = document.getElementById('privacyClose');
+
+function openModal(overlay) {
+    if (overlay) {
+        overlay.classList.add('active');
+        overlay.setAttribute('aria-hidden', 'false');
     }
+}
 
-    function closeCredits() {
-        creditsOverlay.classList.remove('active');
-        creditsOverlay.setAttribute('aria-hidden', 'true');
+function closeModal(overlay) {
+    if (overlay) {
+        overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden', 'true');
     }
+}
 
-    creditsButton.addEventListener('click', openCredits);
-    creditsClose.addEventListener('click', closeCredits);
-
+if (creditsButton && creditsOverlay && creditsClose) {
+    creditsButton.addEventListener('click', () => openModal(creditsOverlay));
+    creditsClose.addEventListener('click', () => closeModal(creditsOverlay));
+    
     creditsOverlay.addEventListener('click', (event) => {
-        if (event.target === creditsOverlay) closeCredits();
+        if (event.target === creditsOverlay) closeModal(creditsOverlay);
     });
+}
 
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeCredits();
+if (privacyButton && privacyOverlay && privacyClose) {
+    privacyButton.addEventListener('click', () => openModal(privacyOverlay));
+    privacyClose.addEventListener('click', () => closeModal(privacyOverlay));
+    
+    privacyOverlay.addEventListener('click', (event) => {
+        if (event.target === privacyOverlay) closeModal(privacyOverlay);
     });
+}
+
+// Escape-toets sluit alle actieve overlays
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeModal(creditsOverlay);
+        closeModal(privacyOverlay);
+    }
+});
+  
 
     const BIBLE_BOOKS = {
         'GEN': { abbr: 'Gen', chapters: 50, name: 'Genesis' },
