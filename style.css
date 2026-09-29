@@ -803,7 +803,46 @@ footer p {
 .bible-link:hover {
     text-decoration: underline;
 }
+.footer-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
+.privacy-card {
+    max-width: 580px;
+    max-height: 85vh;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.privacy-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.privacy-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: inherit;
+}
+
+.privacy-content h3 {
+    font-size: 1.1rem;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.privacy-content p {
+    margin-bottom: 12px;
+}
+
+.privacy-content a {
+    color: #0066cc;
+    text-decoration: underline;
+}
 /* Media Queries */
 
 @media (max-width: 700px) {
