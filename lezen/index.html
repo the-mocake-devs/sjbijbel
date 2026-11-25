@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Lees de Bijbel in het Nederlands met SJBijbel.">
+<title>Bijbel lezen | SJBijbel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lezen/lezen.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/"><img src="/logo.png" alt=""> <span><b>Bijbelzoeker</b><small>Sint-Jan Berchmans</small></span></a><a class="back" href="/">Terug naar SJBijbel</a></header>
+<main class="reader">
+<section class="intro"><span class="eyebrow">SJBIJBEL · LEES DE BIJBEL</span><h1>De Bijbel, <em>binnen handbereik.</em></h1><p>Kies een boek en hoofdstuk, of zoek een woord in de tekst.</p></section>
+<section class="controls" aria-label="Bijbelnavigatie">
+<label>Bijbelboek<select id="bookSelect"></select></label>
+<label>Hoofdstuk<select id="chapterSelect"></select></label>
+<label class="search">Zoeken in hoofdstuk<input id="searchInput" type="search" placeholder="Zoek een woord of zin…"></label>
+</section>
+<div class="toolbar"><div><span class="translation">OPEN VERTALING (OV)</span><span id="status" role="status">Genesis 1 laden…</span></div><div class="actions"><button id="fontDown" type="button" aria-label="Kleinere tekst">A−</button><button id="fontUp" type="button" aria-label="Grotere tekst">A+</button></div></div>
+<article class="passage"><div class="passage-head"><div><span class="eyebrow">HOOFDSTUK</span><h2 id="passageTitle">Genesis 1</h2></div><div class="chapter-nav"><button id="prevChapter" type="button">← Vorige</button><button id="nextChapter" type="button">Volgende →</button></div></div><div id="verses" class="verses" aria-live="polite"></div><p id="error" class="error" hidden></p></article>
+<footer><p>Bijbeltekst: Open Vertaling (OV), beschikbaar onder CC0 1.0. <a href="https://openvertaling.nl/achtergrond.html" target="_blank" rel="noopener">Licentie en achtergrond</a>.</p></footer>
+</main>
+<script src="/lezen/lezen.js" defer></script>
+</body></html>
