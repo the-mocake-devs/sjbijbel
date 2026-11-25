@@ -1,25 +1,356 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Lees de Bijbel in het Nederlands met SJBijbel.">
-<title>Bijbel lezen | SJBijbel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/lezen/lezen.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1917341992266293"
+     crossorigin="anonymous"></script>
+    <link rel="icon" href="/icon" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bijbelzoeker | SJB</title>
+    <meta name="description" content="Zoek snel een Bijbelverwijzing en open ze rechtstreeks op Bible.com.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://sjbijbel.app/#website",
+          "url": "https://sjbijbel.app/",
+          "name": "Bijbelzoeker",
+          "inLanguage": "nl-BE",
+          "publisher": { "@id": "https://sjbijbel.app/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://sjbijbel.app/#organization",
+          "name": "Bijbelzoeker",
+          "url": "https://sjbijbel.app/",
+          "email": "pim@willekens.cc",
+          "description": "Bijbelzoeker is een project van Sint-Jan Berchmans waarmee je snel een Bijbelverwijzing opzoekt."
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<header class="topbar"><a class="brand" href="/"><img src="/logo.png" alt=""> <span><b>Bijbelzoeker</b><small>Sint-Jan Berchmans</small></span></a><a class="back" href="/">Terug naar SJBijbel</a></header>
-<main class="reader">
-<section class="intro"><span class="eyebrow">SJBIJBEL · LEES DE BIJBEL</span><h1>De Bijbel, <em>binnen handbereik.</em></h1><p>Kies een boek en hoofdstuk, of zoek een woord in de tekst.</p></section>
-<section class="controls" aria-label="Bijbelnavigatie">
-<label>Bijbelboek<select id="bookSelect"></select></label>
-<label>Hoofdstuk<select id="chapterSelect"></select></label>
-<label class="search">Zoeken in hoofdstuk<input id="searchInput" type="search" placeholder="Zoek een woord of zin…"></label>
-</section>
-<div class="toolbar"><div><span class="translation">OPEN VERTALING (OV)</span><span id="status" role="status">Genesis 1 laden…</span></div><div class="actions"><button id="fontDown" type="button" aria-label="Kleinere tekst">A−</button><button id="fontUp" type="button" aria-label="Grotere tekst">A+</button></div></div>
-<article class="passage"><div class="passage-head"><div><span class="eyebrow">HOOFDSTUK</span><h2 id="passageTitle">Genesis 1</h2></div><div class="chapter-nav"><button id="prevChapter" type="button">← Vorige</button><button id="nextChapter" type="button">Volgende →</button></div></div><div id="verses" class="verses" aria-live="polite"></div><p id="error" class="error" hidden></p></article>
-<footer><p>Bijbeltekst: Open Vertaling (OV), beschikbaar onder CC0 1.0. <a href="https://openvertaling.nl/achtergrond.html" target="_blank" rel="noopener">Licentie en achtergrond</a>.</p></footer>
-</main>
-<script src="/lezen/lezen.js" defer></script>
-</body></html>
+
+    <nav class="navbar">
+        <a class="brand" href="./">
+            <div class="brand-logo">
+                <img src="/logo.png" alt="SJB logo">
+            </div>
+
+            <div class="brand-text">
+                <span class="brand-name">Bijbelzoeker</span>
+                <span class="brand-subtitle">Sint-Jan Berchmans</span>
+            </div>
+        </a>
+
+        <div class="nav-badge">
+            <span class="nav-dot"></span>
+            Bible.com
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+            <div class="eyebrow">
+                <span class="eyebrow-icon"></span>
+                Zoek in de Bijbel
+            </div>
+
+            <h1>
+                Vind jouw<br>
+                <span>Bijbeltekst.</span>
+            </h1>
+
+            <p class="hero-description">
+                Typ een Bijbelboek en hoofdstuk in en ga meteen
+                naar het juiste vers op Bible.com.
+            </p>
+
+            <div class="search-wrapper">
+
+                <div class="mode-toggle">
+                    <button class="mode-btn active" data-mode="easy">Makkelijk</button>
+                    <button class="mode-btn" data-mode="manual">Handmatig</button>
+                </div>
+
+                <form class="search-box active" id="searchForm">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-4-4"></path>
+                        </svg>
+                    </div>
+
+                    <input id="searchInput" type="text" autocomplete="off" spellcheck="false" placeholder="Bijv. Johannes 3:16" aria-label="Zoek een Bijbelverwijzing">
+
+                    <button class="search-button" type="submit">
+                        Zoeken
+                    </button>
+                </form>
+
+                <div class="easy-input-container">
+                    <form class="easy-input-form" id="easyInputForm">
+
+                        <div class="easy-input-group">
+                            <label class="easy-input-label">Bijbelboek</label>
+
+                            <div class="easy-input-dropdown">
+                                <select class="easy-input-select" id="bookSelect" aria-label="Kies een Bijbelboek">
+                                    <option value="">Kies boek...</option>
+                                </select>
+
+                                <div class="easy-select-search">
+                                    <input type="text" class="easy-book-search" placeholder="Zoek boek...">
+                                    <div class="easy-select-list easy-book-list"></div>
+                                </div>
+                            </div>
+
+                            <div class="easy-input-desc">Bijv. Johannes, Paulus</div>
+                        </div>
+
+                        <div class="easy-input-group">
+                            <label class="easy-input-label">Hoofdstuk</label>
+
+                            <input type="number" class="easy-input-number" id="chapterInput" min="1" placeholder="Bijv. 3" aria-label="Voer het hoofdstuknummer in">
+
+                            <div class="easy-input-desc">Alleen getal (bijv. 3)</div>
+                        </div>
+
+                        <div class="easy-input-group">
+                            <label class="easy-input-label">Vers (optioneel)</label>
+
+                            <input type="text" class="easy-input-number" id="verseInput" placeholder="Bijv. 16 of 1-20" aria-label="Voer versnummer in (optioneel)">
+
+                            <div class="easy-input-desc">Één vers of bereik (1-20)</div>
+                        </div>
+
+                        <button class="easy-input-button" type="submit">
+                            Zoeken
+                        </button>
+
+                    </form>
+                </div>
+
+                <div class="search-hints active">
+                    <button class="hint" data-search="Johannes 3:16">Johannes 3:16</button>
+                    <button class="hint" data-search="Marcus 5:1-20">Marcus 5:1-20</button>
+                    <button class="hint" data-search="Psalm 23">Psalm 23</button>
+                    <button class="hint" data-search="Genesis 1:1">Genesis 1:1</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="results-section">
+
+            <div class="results-header" id="resultsHeader">
+                <div>
+                    <h2 class="results-title">Resultaten</h2>
+                    <span class="results-count" id="resultsCount"></span>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">📖</div>
+                <strong>Geen resultaten gevonden</strong>
+                <p>Controleer uw zoekopdracht en probeer opnieuw.</p>
+            </div>
+
+            <div id="results"></div>
+
+        </section>
+
+        <section class="info-grid">
+
+            <div class="info-card">
+                <div class="info-number">1</div>
+
+                <h2>Zoek snel</h2>
+
+                <p>
+                    Typ eenvoudig de naam van een Bijbelboek in
+                    en het hoofdstuk. Klaar!
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-number">2</div>
+
+                <h2>Direct naar Bible.com</h2>
+
+                <p>
+                    Je bent direct op Bible.com waar je de
+                    volledige tekst kunt lezen.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-number">3</div>
+
+                <h2>Alles wat je nodig hebt</h2>
+
+                <p>
+                    Van Genesis tot Openbaring. Alle boeken
+                    van de Bijbel beschikbaar.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-number">4</div>
+
+                <h2>Alle bijbelboeken</h2>
+
+                <p>
+                    Per boek een korte inleiding en de volledige
+                    hoofdstukkenlijst.
+                </p>
+
+                <a class="info-cta" href="/bijbelboeken">Bekijk het overzicht</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-number">5</div>
+
+                <h2>Gidsen</h2>
+
+                <p>
+                    Vier korte gidsen over verwijzingen,
+                    vertalingen en sneller zoeken.
+                </p>
+
+                <a class="info-cta" href="/gids">Bekijk de gidsen</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-number">6</div>
+
+                <h2>Contact</h2>
+
+                <p>
+                    Fout gevonden of een idee voor de site? We horen het graag.
+                </p>
+
+                <a class="info-cta" href="/contact">Stuur ons een bericht</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <p>
+                Bijbelzoeker is een snelle manier om Bijbelverwijzingen te vinden op
+                <a class="bible-link" href="https://www.bible.com" target="_blank">Bible.com</a>
+            </p>
+
+            <div class="footer-buttons">
+                <button class="credits-button" id="creditsButton" type="button" aria-label="Credits openen">
+                    Credits
+                </button>
+                <button class="credits-button" id="privacyButton" type="button" aria-label="Privacybeleid openen">
+                    Privacybeleid
+                </button>
+                <a href="/about.html" style="text-decoration: none;" class="credits-button" aria-label="Over ons pagina openen">
+                    Over ons
+                </a>
+                <a href="/bijbelboeken" style="text-decoration: none;" class="credits-button" aria-label="Alle bijbelboeken openen">
+                    Bijbelboeken
+                </a>
+                <a href="/contact" style="text-decoration: none;" class="credits-button" aria-label="Contactpagina openen">
+                    Contact
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Credits Overlay -->
+    <div class="credits-overlay" id="creditsOverlay" aria-hidden="true">
+
+        <div class="credits-card" role="dialog" aria-modal="true" aria-labelledby="creditsTitle">
+
+            <div class="brand-logo2">
+                <img src="/logo.png" alt="SJB logo">
+            </div>
+
+            <h2 id="creditsTitle">Credits</h2>
+
+            <div class="credits-list">
+
+                <div class="credit-person">
+                    <strong>Uitvinder en Ontwikkelaar:</strong>
+                    Thijs Vanden Broeck
+                </div>
+
+                <div class="credit-person">
+                    <strong>Ontwikkelaar:</strong>
+                    Pim Willekens
+                </div>
+
+            </div>
+
+            <button class="credits-close" id="creditsClose" type="button">
+                Sluiten
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="credits-overlay" id="privacyOverlay" aria-hidden="true">
+
+        <div class="credits-card privacy-card" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+
+            <div class="brand-logo2">
+                <img src="/logo.png" alt="SJB logo">
+            </div>
+
+            <h2 id="privacyTitle">Privacybeleid</h2>
+
+            <div class="privacy-content">
+                <p>Wij hechten veel waarde aan jouw privacy. Op deze website verzamelen wij zelf geen persoonlijke gegevens of zoekopdrachten.</p>
+                
+                <h3>Google AdSense &amp; Cookies</h3>
+                <p>
+                    Onze website maakt gebruik van <a href="https://ads.google.com/">Google Ads</a> om hem draaiende te houden.
+                    Deze kost namelijk geld, en het is dus onvermijdelijk om dat niet te doen.
+                </p>
+                <p>
+                    Je kunt je afmelden voor gepersonaliseerde advertenties via de 
+                    <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Advertentie-instellingen van Google</a> 
+                    of via <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>.
+                </p>
+                <p>
+                    Heb je klachten of problemen met deze advertenties of wil je iedereen helpen door een donatie te doen?
+                    <a href="mailto:pim@willekens.cc">Mail ons</a>
+                </p>
+
+                <p>
+                    <a href="/privacy.html">Lees het volledige privacybeleid →</a>
+                </p>
+            </div>
+
+            <button class="credits-close" id="privacyClose" type="button">
+                Sluiten
+            </button>
+
+        </div>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
