@@ -1,3 +1,6 @@
 README.md
 .assetsignore
 adsense-roadmap.md
+wrangler.jsonc
+gen-sitemap.js
+.git
