@@ -270,14 +270,7 @@ document.addEventListener('keydown', (event) => {
     function createResultCard(result) {
         const { bookName, chapter, verses, abbr } = result;
 
-        let url = `https://www.bible.com/nl/bible/75/${abbr}.${chapter}`;
-
-        if (verses) {
-            const versesPart = verses.replace('-', '%2D');
-
-            url += `.${versesPart}`;
-        }
-
+        let url = `https://sjbijbel.app/lezen/?boek=${encodeURIComponent(bookName)}&hoofdstuk=${encodeURIComponent(chapter)}&vers=${encodeURIComponent(verses)}`;
         const card = document.createElement('a');
 
         card.href = url;
