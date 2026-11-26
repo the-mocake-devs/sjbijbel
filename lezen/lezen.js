@@ -3,7 +3,7 @@ const KEY = window.BIJBEL_API_KEY;
 
 const $ = (id) => document.getElementById(id);
 const cache = new Map();
-const state = { books: [], bookIndex: 0, chapter: 1, verses: [], fontSize: 20 };
+const state = { books: [], bookIndex: 0, chapter: 1, verses: [], fontSize: 20, highlight: null };
 const bookSelect = $("bookSelect"), chapterSelect = $("chapterSelect");
 
 async function api(params) {
@@ -47,12 +47,31 @@ async function getChapter(book, chapter) {
   return cache.get(key);
 }
 
+function normalizeBook(value) {
+  return String(value || "").trim().toLocaleLowerCase("nl").replace(/\s+/g, " ");
+}
+
+function parseVerse(value) {
+  if (!value) return null;
+  const match = String(value).match(/^(\d+)(?:-(\d+))?$/);
+  if (!match) return null;
+  const start = Number(match[1]);
+  const end = match[2] ? Number(match[2]) : start;
+  return { start, end: Math.max(start, end) };
+}
+
+function verseParam() {
+  if (!state.highlight) return null;
+  const { start, end } = state.highlight;
+  return start === end ? String(start) : `${start}-${end}`;
+}
+
 function getParams() {
   const params = new URLSearchParams(location.search);
   return {
     book: params.get("boek"),
     chapter: Number(params.get("hoofdstuk")) || null,
-    verse: Number(params.get("vers")) || null,
+    verse: params.get("vers"),
   };
 }
 
@@ -92,6 +111,9 @@ function renderVerses(filter = "") {
 
     const span = document.createElement("span");
     span.className = "verse";
+    if (state.highlight && verse.number >= state.highlight.start && verse.number <= state.highlight.end) {
+      span.classList.add("highlighted");
+    }
     span.id = `vers-${verse.number}`;
     span.append(number, document.createTextNode(text + " "));
     target.append(span);
@@ -112,10 +134,12 @@ async function loadChapter() {
     renderVerses($("searchInput").value);
     $("status").textContent = `${state.verses.length} verzen`;
 
-    const verse = getParams().verse;
-    updateURL(verse);
-    if (verse) {
-      setTimeout(() => document.getElementById(`vers-${verse}`)?.scrollIntoView({ behavior: "smooth", block: "center" }), 60);
+    updateURL(verseParam());
+    if (state.highlight) {
+      setTimeout(() => {
+        const first = document.getElementById(`vers-${state.highlight.start}`) || document.querySelector(".verse.highlighted");
+        first?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 60);
     }
   } catch (error) {
     state.verses = [];
@@ -142,6 +166,7 @@ function stepChapter(direction) {
     bookSelect.value = target.id;
   }
 
+  state.highlight = null;
   $("searchInput").value = "";
   loadChapter();
 }
@@ -150,8 +175,14 @@ async function init() {
   try {
     state.books = await getBooks();
     const params = getParams();
+    state.highlight = parseVerse(params.verse);
 
-    const index = state.books.findIndex((book) => book.id === params.book);
+    const wantedBook = normalizeBook(params.book);
+    const index = state.books.findIndex((book) =>
+      normalizeBook(book.id) === wantedBook ||
+      normalizeBook(book.name) === wantedBook ||
+      normalizeBook(book.id).replace(/\s/g, "") === wantedBook.replace(/\s/g, "")
+    );
     state.bookIndex = index >= 0 ? index : 0;
     const book = state.books[state.bookIndex];
     state.chapter = book.chapters.includes(params.chapter) ? params.chapter : book.chapters[0];
@@ -175,12 +206,14 @@ async function init() {
 bookSelect.addEventListener("change", () => {
   state.bookIndex = state.books.findIndex((book) => book.id === bookSelect.value);
   state.chapter = state.books[state.bookIndex].chapters[0];
+  state.highlight = null;
   $("searchInput").value = "";
   loadChapter();
 });
 
 chapterSelect.addEventListener("change", () => {
   state.chapter = Number(chapterSelect.value);
+  state.highlight = null;
   $("searchInput").value = "";
   loadChapter();
 });
