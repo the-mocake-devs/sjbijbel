@@ -2,13 +2,13 @@ const fs = require("fs");
 
 const books = fs.readdirSync("bijbel").filter(f => f.endsWith(".html")).map(f => "/bijbel/" + f.replace(".html", ""));
 const guides = fs.readdirSync("gids").filter(f => f.endsWith(".html")).map(f => "/gids/" + f.replace(".html", ""));
-const core = ["/", "/bijbelboeken", "/gids", "/about", "/privacy", "/contact"];
+const core = ["/", "/lezen", "/bijbelboeken", "/gids", "/about", "/privacy", "/contact"];
 const urls = [...core, ...books, ...guides];
 
 const lines = urls.map(u => [
   "  <url>",
   "    <loc>https://sjbijbel.app" + u + "</loc>",
-  "    <lastmod>2026-11-25</lastmod>",
+  "    <lastmod>2026-11-26</lastmod>",
   "  </url>"
 ].join("\n"));
 
