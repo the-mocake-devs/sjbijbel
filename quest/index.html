@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="https://the-mocake-devs.github.io/geloofsquest/logo.png" />
+<meta property="og:title" content="SJBquest" />
+<meta property="og:description" content="Leer. Speel. Ontdek." />
+<title>SJBquest – Leer. Speel. Ontdek.</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.lineicons.com/5.2/line/lineicons.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#" data-go="home">
+    <!-- Eigen logo: zet je bestand in de map en vervang src (bv. logo.png) -->
+    <img id="logo" src="logo.png" alt="" onerror="this.style.display='none'">
+    <span>SJB<b>quest</b></span>
+  </a>
+  <div class="nav-right">
+    <span class="chip" id="navLevel">Niveau 1</span>
+    <span class="chip xp" id="navXp">0 XP</span>
+    <button class="icon-btn" id="soundBtn" aria-label="Geluid aan of uit" aria-pressed="false"><i class="lni lni-volume-mute" aria-hidden="true"></i></button>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="screen active">
+    <div class="hero">
+      <h1>Leer. Speel. Ontdek.</h1>
+      <p>Verzamel XP, ontgrendel titels en test wat je weet over sacramenten, feesten, de Bijbel en de wereldgodsdiensten.</p>
+      <button class="btn primary" data-play="quiz">Start de Quiz Arena</button>
+    </div>
+
+    <h2 class="sec-title">Spelmodes</h2>
+    <div class="grid" id="modeGrid"></div>
+
+    <h2 class="sec-title">Onderwerpen</h2>
+    <div class="topics" id="topicList"></div>
+
+    <h2 class="sec-title">Jouw sessie</h2>
+    <div class="card session">
+      <div class="level-row"><strong id="sesTitle">Bijbelbeginner</strong><span id="sesLevel">Niveau 1</span></div>
+      <div class="bar"><i id="sesBar"></i></div>
+      <p class="muted" id="sesText">0 XP · 0 juiste antwoorden · beste combo 0</p>
+      <div class="medals" id="medals"></div>
+      <p class="muted small">Alles wordt enkel in het geheugen bewaard. Vernieuw je de pagina, dan begin je opnieuw.</p>
+    </div>
+  </section>
+
+  <section id="game" class="screen"><div id="gameRoot"></div></section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti"></canvas>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+<!-- Spelmodi: elk bestand registreert zichzelf via SJ.registerGame(...) -->
+<script src="games/quiz.js"></script>
+<script src="games/speed.js"></script>
+<script src="games/daily.js"></script>
+<script src="games/memory.js"></script>
+<script src="games/runner.js"></script>
+<script>(typeof loadQuestions === "function" ? loadQuestions() : Promise.resolve()).then(() => SJ.init());</script>
+</body>
+</html>
