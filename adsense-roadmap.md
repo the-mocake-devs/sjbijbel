@@ -35,7 +35,7 @@ Per-book pages (the backbone, do ~15 first):
 - [x] One page per Bible book, route `/bijbel/genesis` etc. (47 books + `/bijbelboeken` overview)
       Each page needs to stand alone:
       - 2–3 paragraphs: what the book is, who wrote it, theme, why you'd search it.
-      - Chapter grid linking to Bible.com (this is the actual utility, not padding).
+      - Chapter grid linking to our own reader (this is the actual utility, not padding).
       - 3–5 notable passages with one-line context.
       - Link back to the search tool, pre-filled where possible.
 - [x] No mass-generated stubs: every book page has its own intro, themes and key passages. 66 identical pages with one swapped word. That is exactly what
@@ -45,7 +45,7 @@ Per-book pages (the backbone, do ~15 first):
 Guides / explainers (pick 5–8):
 - [x] Hoe lees je een bijbelverwijzing (Johannes 3:16, 1 Kor 13:4-7, ...) — genuinely useful,
       answers a real query.
-- [x] Welke Bijbelvertalingen zijn er (HSV, NBV21, BGT, Statenvertaling) en welke gebruikt Bible.com.
+- [x] Welke Bijbelvertalingen zijn er (HSV, NBV21, BGT, Statenvertaling) en welke SJBijbel gebruikt.
 - [x] Veelgezochte Bijbelteksten bij o.a. rouw, trouwen, examens, angst.
 - [x] Hoe de zoeker werkt + zoektips (boekafkortingen, versbereik).
 - [ ] Over het project / SJB (expand the current about page).

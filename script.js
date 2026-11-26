@@ -268,9 +268,11 @@ document.addEventListener('keydown', (event) => {
     }
 
     function createResultCard(result) {
-        const { bookName, chapter, verses, abbr } = result;
+        const { bookName, chapter, verses } = result;
 
-        let url = `https://sjbijbel.app/lezen/?boek=${encodeURIComponent(bookName)}&hoofdstuk=${encodeURIComponent(chapter)}&vers=${encodeURIComponent(verses)}`;
+        const params = new URLSearchParams({ boek: bookName, hoofdstuk: chapter });
+        if (verses) params.set("vers", verses);
+        const url = `/lezen/?${params}`;
         const card = document.createElement('a');
 
         card.href = url;
