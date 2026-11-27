@@ -206,7 +206,7 @@
     S.spawn = 235 - Math.min(S.t * 1.4, 75);
   }
   function spawnGate() {
-    const q = SJ.pick({ count: 1 })[0];
+    const q = SJ.pick({ count: 1, game: "faithrunner" })[0];
     if (!q) { S.qt = 18; return; }
     const wrong = shuffle(q.answers.filter((_, i) => i !== q.correct)).slice(0, 2);
     const opts = shuffle([{ t: q.answers[q.correct], ok: true }, ...wrong.map(t => ({ t, ok: false }))]);
