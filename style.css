@@ -20,7 +20,9 @@
 html {
     scroll-behavior: smooth;
 }
-
+b {
+    color:var(--green);
+}
 body {
     margin: 0;
     min-height: 100vh;
