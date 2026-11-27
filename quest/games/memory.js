@@ -1,19 +1,25 @@
-/* MEMORY CHALLENGE — begrippen koppelen aan hun betekenis. */
 (() => {
-  const PAIRS = [
-    { term: "Doopsel",        mean: "Je wordt lid van de Kerk",              cat: "Sacramenten" },
-    { term: "Eucharistie",    mean: "Brood en wijn worden Christus' lichaam", cat: "Sacramenten" },
-    { term: "Vormsel",        mean: "Je ontvangt de Heilige Geest",           cat: "Sacramenten" },
-    { term: "Biecht",         mean: "Sacrament van vergeving",                cat: "Sacramenten" },
-    { term: "Advent",         mean: "Voorbereiding op Kerstmis",              cat: "Feesten" },
-    { term: "Pinksteren",     mean: "Komst van de Heilige Geest",             cat: "Feesten" },
-    { term: "Pasen",          mean: "Viering van de opstanding",              cat: "Feesten" },
-    { term: "Kaaba",          mean: "Heilige plaats in Mekka",                cat: "Wereldgodsdiensten" },
-    { term: "Koran",          mean: "Heilig boek van de islam",               cat: "Wereldgodsdiensten" },
-    { term: "Ster van David", mean: "Joods symbool",                          cat: "Symbolen" },
-    { term: "Verloren zoon",  mean: "Parabel over vergeving",                 cat: "Parabels" },
-    { term: "Noach",          mean: "Bouwde de ark",                          cat: "Bijbel" }
-  ];
+const FALLBACK = [
+  { antwoord: "Doopsel",        vraag: "Je wordt lid van de Kerk",              categorie: "Sacramenten" },
+  { antwoord: "Eucharistie",    vraag: "Brood en wijn worden Christus' lichaam", categorie: "Sacramenten" },
+  { antwoord: "Vormsel",        vraag: "Je ontvangt de Heilige Geest",           categorie: "Sacramenten" },
+  { antwoord: "Biecht",         vraag: "Sacrament van vergeving",                categorie: "Sacramenten" },
+  { antwoord: "Advent",         vraag: "Voorbereiding op Kerstmis",              categorie: "Feesten" },
+  { antwoord: "Pinksteren",     vraag: "Komst van de Heilige Geest",             categorie: "Feesten" },
+  { antwoord: "Pasen",          vraag: "Viering van de opstanding",              categorie: "Feesten" },
+  { antwoord: "Kaaba",          vraag: "Heilige plaats in Mekka",                categorie: "Wereldgodsdiensten" },
+  { antwoord: "Koran",          vraag: "Heilig boek van de islam",               categorie: "Wereldgodsdiensten" },
+  { antwoord: "Ster van David", vraag: "Joods symbool",                          categorie: "Symbolen" },
+  { antwoord: "Verloren zoon",  vraag: "Parabel over vergeving",                 categorie: "Parabels" },
+  { antwoord: "Noach",          vraag: "Bouwde de ark",                          categorie: "Bijbel" }
+];
+
+const getPairs = () => {
+  const list = (typeof questions !== "undefined" && Array.isArray(questions))
+    ? questions.filter(q => Array.isArray(q.suitable) && q.suitable.includes("memory"))
+    : [];
+  return list.length >= 10 ? list : FALLBACK;
+};
   const LEVELS = [
     [6, "Makkelijk", "12 kaarten · 6 paren"],
     [8, "Gemiddeld", "16 kaarten · 8 paren"],
@@ -38,7 +44,7 @@
       g.gain.linearRampToValueAtTime(vol, t + .01);
       g.gain.exponentialRampToValueAtTime(.0001, t + dur);
       o.connect(g); g.connect(audio.destination); o.start(t); o.stop(t + dur + .02);
-    } catch (e) { /* geluid niet beschikbaar */ }
+    } catch (e) {}
   }
   const sfx = {
     flip:  () => tone(520, .06, 0, "triangle", .025),
@@ -132,10 +138,10 @@
   }
 
   function begin(n) {
-    const deck = shuffle(PAIRS).slice(0, n);
+    const deck = shuffle(getPairs()).slice(0, n);
     const cards = shuffle(deck.flatMap((p, pair) => [
-      { pair, side: "term", text: p.term, cat: p.cat },
-      { pair, side: "mean", text: p.mean, cat: p.cat }
+      { pair, side: "antwoord", text: p.antwoord, categorie: p.categorie },
+      { pair, side: "vraag",    text: p.vraag,    categorie: p.categorie }
     ]));
     S = { n, cards, open: [], matched: 0, moves: 0, combo: 0, bestCombo: 0,
           score: 0, lock: false, start: 0, elapsed: 0, paused: false, done: false };
@@ -149,7 +155,7 @@
     <div class="mm-wrap"><div class="mm-grid" id="mm-grid">
       ${cards.map((c, i) => `<button class="mm-card" data-i="${i}" aria-label="Dichtgeklapte kaart ${i + 1}" aria-pressed="false">
         <span class="mm-inner"><span class="mm-back"><span class="mm-mark"><i class="lni lni-plus" aria-hidden="true"></i></span><span class="mm-brand">SJBQUEST</span></span>
-        <span class="mm-face"><small>${c.cat}</small><b>${c.text}</b></span></span></button>`).join("")}
+        <span class="mm-face"><small>${c.categorie}</small><b>${c.text}</b></span></span></button>`).join("")}
     </div><div class="mm-pause" id="mm-pause" hidden><h3>Even rust</h3><p>Je tijd staat stil.</p><button class="btn primary" id="mm-resume">Hervatten</button><button class="btn" id="mm-stop">Stoppen</button></div></div>
     <p class="mm-tip">Pijltjestoetsen navigeren · Enter of spatie klapt een kaart open.</p>`);
 
@@ -194,7 +200,7 @@
     if (!S || S.done || S.paused || S.lock || el.classList.contains("open") || el.classList.contains("done")) return;
     const c = S.cards[+el.dataset.i];
     el.classList.add("open"); el.setAttribute("aria-pressed", "true");
-    el.setAttribute("aria-label", (c.side === "term" ? "Begrip: " : "Betekenis: ") + c.text);
+    el.setAttribute("aria-label", (c.side === "antwoord" ? "Begrip: " : "Betekenis: ") + c.text);
     sfx.flip();
     if (!S.start) { S.start = Date.now(); tickT = setInterval(tick, 250); }
     S.open.push(el);
@@ -226,7 +232,7 @@
           el.setAttribute("aria-label", "Kaart dichtgeklapt");
         });
         S.open = []; S.lock = false; updateHud();
-      }, reduce ? 120 : 720);
+      }, reduce ? 1000 : 1500);
     }
   }
 
