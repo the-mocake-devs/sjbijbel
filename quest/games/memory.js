@@ -17,6 +17,7 @@ const FALLBACK = [
 const getPairs = () => {
   const list = (typeof questions !== "undefined" && Array.isArray(questions))
     ? questions.filter(q => Array.isArray(q.suitable) && q.suitable.includes("memory"))
+        .map(q => ({ vraag: q.question, antwoord: q.answers[q.correct], categorie: q.category }))
     : [];
   return list.length >= 10 ? list : FALLBACK;
 };
