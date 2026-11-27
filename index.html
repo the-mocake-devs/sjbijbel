@@ -7,6 +7,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .quest-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 22px 0 18px;
+            padding: 19px 24px;
+            border: 2px solid rgba(21, 60, 107, 0.12);
+            border-radius: 22px;
+            background: linear-gradient(110deg, #f8d65b 0%, #f4c542 55%, #f8dc78 100%);
+            color: #0d294b;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(13, 41, 75, 0.10);
+            transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+        }
+
+        .quest-banner:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.035);
+            box-shadow: 0 12px 28px rgba(13, 41, 75, 0.16);
+        }
+
+        .quest-banner:focus-visible {
+            outline: 3px solid #3f806d;
+            outline-offset: 4px;
+        }
+
+        .quest-banner strong {
+            color: #153c6b;
+        }
+
+        .quest-banner .quest-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 27px;
+            height: 27px;
+            flex: 0 0 27px;
+            border-radius: 50%;
+            background: #153c6b;
+            color: #fff;
+            font-size: 17px;
+            transition: transform 180ms ease;
+        }
+
+        .quest-banner:hover .quest-arrow {
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 600px) {
+            .quest-banner {
+                gap: 6px;
+                margin: 18px 0 14px;
+                padding: 16px 14px;
+                border-radius: 18px;
+                font-size: 14px;
+            }
+
+            .quest-banner .quest-arrow {
+                width: 24px;
+                height: 24px;
+                flex-basis: 24px;
+                font-size: 15px;
+            }
+        }
+    </style>
     <title>Bijbelzoeker | SJB</title>
     <meta name="description" content="Zoek snel een Bijbelverwijzing en lees ze direct in de Bijbellezer van SJBijbel.">
     <script type="application/ld+json">
@@ -137,6 +212,11 @@
 
                     </form>
                 </div>
+
+                <a class="quest-banner" href="https://quest.sjbijbel.app" target="_blank" rel="noopener noreferrer">
+                    <span><strong>SJB Quest is UIT!</strong> Speel nu op quest.sjbijbel.app!</span>
+                    <span class="quest-arrow" aria-hidden="true">→</span>
+                </a>
 
                 <div class="search-hints active">
                     <button class="hint" data-search="Johannes 3:16">Johannes 3:16</button>
