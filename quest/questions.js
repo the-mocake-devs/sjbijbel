@@ -17,37 +17,12 @@ const BUILTIN_QUESTIONS = [
 
 let questions = BUILTIN_QUESTIONS.slice();
 
-const shuffle = a => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
-
-function convertQuestions(data) {
-  const byCat = {};
-  data.forEach(q => {
-    const cat = q.categorie || "Algemene kennis";
-    if (!byCat[cat]) byCat[cat] = [];
-    byCat[cat].push(String(q.antwoord));
-  });
-  return data.map((q, i) => {
-    const right = String(q.antwoord);
-    const pool = (byCat[q.categorie] || []).filter(a => a !== right);
-    const options = shuffle([right, ...shuffle(pool).slice(0, 3)]);
-    return {
-      id: q.id || i + 1,
-      category: q.categorie || "Algemene kennis",
-      difficulty: "medium",
-      question: q.vraag,
-      answers: options,
-      correct: options.indexOf(right),
-      explanation: right
-    };
-  });
-}
-
 async function loadQuestions() {
   try {
     const res = await fetch("questionsdata.json");
     if (!res.ok) return;
     const data = await res.json();
-    if (Array.isArray(data) && data.length) questions = convertQuestions(data);
+    if (Array.isArray(data) && data.length) questions = data;
   } catch (e) {
   }
 }
