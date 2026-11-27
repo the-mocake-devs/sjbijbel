@@ -20,7 +20,7 @@
 html {
     scroll-behavior: smooth;
 }
-b {
+.green {
     color:var(--green);
 }
 body {
