@@ -10,7 +10,7 @@
       if (b.dataset.cat) begin(b.dataset.cat); if ("back" in b.dataset) SJ.home(); };
   }
   function begin(c) {
-    cat = c; list = SJ.pick(c === "Alles" ? {count: 10} : {category: c, count: 10}).map(SJ.prepare);
+    cat = c; list = SJ.pick(c === "Alles" ? {count: 10, game: "quiz"} : {category: c, count: 10, game: "quiz"}).map(SJ.prepare);
     if (!list.length) return SJ.toast("Nog geen vragen in deze categorie.");
     i = 0; score = 0; combo = 0; ask();
   }
