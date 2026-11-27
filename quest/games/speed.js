@@ -1,7 +1,7 @@
 (() => {
   let root, pool, q, left, score, combo, best, right, t0, iv, lock;
   const TOTAL = 60;
-  const refill = () => SJ.pick({}).map(SJ.prepare);
+  const refill = () => SJ.pick({game: "quiz"}).map(SJ.prepare);
   function stop() { clearInterval(iv); iv = null; }
 
   function intro() {
