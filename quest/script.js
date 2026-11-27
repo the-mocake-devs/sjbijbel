@@ -54,7 +54,7 @@ const SJ = (() => {
 
   function pick(filter={}){ // helper voor alle spelmodi
     const bank = Array.isArray(questions) ? questions : [];
-    let list=bank.filter(q=>(!filter.category||q.category===filter.category)&&(!filter.difficulty||q.difficulty===filter.difficulty));
+    let list=bank.filter(q=>(!filter.category||q.category===filter.category)&&(!filter.difficulty||q.difficulty===filter.difficulty)&&(!filter.game||(q.suitable||["quiz"]).includes(filter.game)));
     return list.map(q=>[Math.random(),q]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]).slice(0,filter.count||list.length);
   }
 
