@@ -13,7 +13,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 16px;
             width: 100%;
             box-sizing: border-box;
             margin: 22px 0 18px;
@@ -26,7 +26,7 @@
             font-size: 17px;
             font-weight: 700;
             line-height: 1.5;
-            text-align: center;
+            text-align: left;
             text-decoration: none;
             box-shadow: 0 8px 24px rgba(13, 41, 75, 0.10);
             transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
@@ -41,6 +41,15 @@
         .quest-banner:focus-visible {
             outline: 3px solid #3f806d;
             outline-offset: 4px;
+        }
+
+        .quest-banner .quest-logo {
+            display: block;
+            width: 58px;
+            height: 58px;
+            flex: 0 0 58px;
+            object-fit: contain;
+            border-radius: 14px;
         }
 
         .quest-banner strong {
@@ -67,11 +76,17 @@
 
         @media (max-width: 600px) {
             .quest-banner {
-                gap: 6px;
+                gap: 10px;
                 margin: 18px 0 14px;
                 padding: 16px 14px;
                 border-radius: 18px;
                 font-size: 14px;
+            }
+
+            .quest-banner .quest-logo {
+                width: 46px;
+                height: 46px;
+                flex-basis: 46px;
             }
 
             .quest-banner .quest-arrow {
@@ -214,6 +229,7 @@
                 </div>
 
                 <a class="quest-banner" href="https://quest.sjbijbel.app" target="_blank" rel="noopener noreferrer">
+                    <img class="quest-logo" src="/QuestLogo.png" alt="SJB Quest logo">
                     <span><strong>SJB Quest is UIT!</strong> Speel nu op quest.sjbijbel.app!</span>
                     <span class="quest-arrow" aria-hidden="true">→</span>
                 </a>
