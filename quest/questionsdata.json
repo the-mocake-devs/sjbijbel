@@ -1,603 +1,702 @@
-
 [
   {
     "id": 1,
     "categorie": "Godsdiensten",
     "vraag": "Wat is een godsdienst?",
-    "antwoord": "Een geloof in een god of meerdere goden en de bijbehorende tradities."
+    "antwoord": "Een geloof in een god of meerdere goden en de bijbehorende tradities.",
+    "suitable": ["quiz"]
   },
   {
     "id": 2,
     "categorie": "Godsdiensten",
     "vraag": "Welke godsdienst heeft Jezus als centrale figuur?",
-    "antwoord": "Het christendom."
+    "antwoord": "Het christendom.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 3,
     "categorie": "Godsdiensten",
     "vraag": "Wat is het heilige boek van de christenen?",
-    "antwoord": "De Bijbel."
+    "antwoord": "De Bijbel.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 4,
     "categorie": "Godsdiensten",
     "vraag": "Wat is het heilige boek van de moslims?",
-    "antwoord": "De Koran."
+    "antwoord": "De Koran.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 5,
     "categorie": "Godsdiensten",
     "vraag": "Hoe heet de god van de islam?",
-    "antwoord": "Allah."
+    "antwoord": "Allah.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 6,
     "categorie": "Godsdiensten",
     "vraag": "Wie is de profeet van de islam?",
-    "antwoord": "Mohammed."
+    "antwoord": "Mohammed.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 7,
     "categorie": "Godsdiensten",
     "vraag": "Wat is het heilige boek van het jodendom?",
-    "antwoord": "De Thora."
+    "antwoord": "De Thora.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 8,
     "categorie": "Godsdiensten",
     "vraag": "Hoe heet de gebedsplaats van moslims?",
-    "antwoord": "Een moskee."
+    "antwoord": "Een moskee.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 9,
     "categorie": "Godsdiensten",
     "vraag": "Hoe heet de gebedsplaats van christenen?",
-    "antwoord": "Een kerk."
+    "antwoord": "Een kerk.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 10,
     "categorie": "Godsdiensten",
     "vraag": "Hoe heet de gebedsplaats van joden?",
-    "antwoord": "Een synagoge."
+    "antwoord": "Een synagoge.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 11,
     "categorie": "Godsdiensten",
     "vraag": "Welke godsdienst heeft Brahman als belangrijk godsbegrip?",
-    "antwoord": "Het hindoeïsme."
+    "antwoord": "Het hindoeïsme.",
+    "suitable": ["quiz", "faithrunner"]
   },
   {
     "id": 12,
     "categorie": "Godsdiensten",
     "vraag": "Wie was Siddhartha Gautama?",
-    "antwoord": "De Boeddha, de stichter van het boeddhisme."
+    "antwoord": "De Boeddha, de stichter van het boeddhisme.",
+    "suitable": ["quiz"]
   },
   {
     "id": 13,
     "categorie": "Godsdiensten",
     "vraag": "Wat is de Kaäba?",
-    "antwoord": "Een heilige plaats in Mekka waar moslims naartoe bidden."
+    "antwoord": "Een heilige plaats in Mekka waar moslims naartoe bidden.",
+    "suitable": ["quiz"]
   },
   {
     "id": 14,
     "categorie": "Godsdiensten",
     "vraag": "Wat vieren christenen met Kerstmis?",
-    "antwoord": "De geboorte van Jezus."
+    "antwoord": "De geboorte van Jezus.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 15,
     "categorie": "Godsdiensten",
     "vraag": "Wat vieren christenen met Pasen?",
-    "antwoord": "De verrijzenis van Jezus."
+    "antwoord": "De verrijzenis van Jezus.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 16,
     "categorie": "Godsdiensten",
     "vraag": "Wat vieren moslims tijdens het Suikerfeest?",
-    "antwoord": "Het einde van de vastenmaand Ramadan."
+    "antwoord": "Het einde van de vastenmaand Ramadan.",
+    "suitable": ["quiz"]
   },
   {
     "id": 17,
     "categorie": "Godsdiensten",
     "vraag": "Wat is de Ramadan?",
-    "antwoord": "Een maand waarin moslims overdag vasten."
+    "antwoord": "Een maand waarin moslims overdag vasten.",
+    "suitable": ["quiz"]
   },
   {
     "id": 18,
     "categorie": "Godsdiensten",
     "vraag": "Wat is de sjabbat?",
-    "antwoord": "De wekelijkse rustdag in het jodendom."
+    "antwoord": "De wekelijkse rustdag in het jodendom.",
+    "suitable": ["quiz"]
   },
   {
     "id": 19,
     "categorie": "Godsdiensten",
     "vraag": "Wat is een imam?",
-    "antwoord": "Een voorganger die het gebed in een moskee kan leiden."
+    "antwoord": "Een voorganger die het gebed in een moskee kan leiden.",
+    "suitable": ["quiz"]
   },
   {
     "id": 20,
     "categorie": "Godsdiensten",
     "vraag": "Wat is een rabbijn?",
-    "antwoord": "Een joodse religieuze leraar."
+    "antwoord": "Een joodse religieuze leraar.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 21,
     "categorie": "Sacramenten",
     "vraag": "Hoeveel sacramenten zijn er in de katholieke Kerk?",
-    "antwoord": "Zeven."
+    "antwoord": "Zeven.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 22,
     "categorie": "Sacramenten",
     "vraag": "Wat is het eerste sacrament dat iemand meestal ontvangt?",
-    "antwoord": "Het doopsel."
+    "antwoord": "Het doopsel.",
+    "suitable": ["quiz", "faithrunner"]
   },
   {
     "id": 23,
     "categorie": "Sacramenten",
     "vraag": "Wat gebeurt er bij een doopsel?",
-    "antwoord": "Iemand wordt opgenomen in de christelijke gemeenschap."
+    "antwoord": "Iemand wordt opgenomen in de christelijke gemeenschap.",
+    "suitable": ["quiz"]
   },
   {
     "id": 24,
     "categorie": "Sacramenten",
     "vraag": "Welk symbool wordt gebruikt bij het doopsel?",
-    "antwoord": "Water."
+    "antwoord": "Water.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 25,
     "categorie": "Sacramenten",
     "vraag": "Wat betekent het vormsel?",
-    "antwoord": "Een bevestiging van het geloof en de doopbelofte."
+    "antwoord": "Een bevestiging van het geloof en de doopbelofte.",
+    "suitable": ["quiz"]
   },
   {
     "id": 26,
     "categorie": "Sacramenten",
     "vraag": "Welk sacrament heeft te maken met brood en wijn?",
-    "antwoord": "De eucharistie."
+    "antwoord": "De eucharistie.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 27,
     "categorie": "Sacramenten",
     "vraag": "Wat stelt het brood voor tijdens de eucharistie?",
-    "antwoord": "Het lichaam van Christus."
+    "antwoord": "Het lichaam van Christus.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 28,
     "categorie": "Sacramenten",
     "vraag": "Wat stelt de wijn voor tijdens de eucharistie?",
-    "antwoord": "Het bloed van Christus."
+    "antwoord": "Het bloed van Christus.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 29,
     "categorie": "Sacramenten",
     "vraag": "Welk sacrament wordt ook de biecht genoemd?",
-    "antwoord": "De verzoening of vergeving."
+    "antwoord": "De verzoening of vergeving.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 30,
     "categorie": "Sacramenten",
     "vraag": "Wat gebeurt er bij de ziekenzalving?",
-    "antwoord": "Een zieke of stervende persoon ontvangt gebed, steun en zalving met olie."
+    "antwoord": "Een zieke of stervende persoon ontvangt gebed, steun en zalving met olie.",
+    "suitable": ["quiz"]
   },
   {
     "id": 31,
     "categorie": "Sacramenten",
     "vraag": "Welk sacrament verbindt twee mensen in een christelijk huwelijk?",
-    "antwoord": "Het huwelijk."
+    "antwoord": "Het huwelijk.",
+    "suitable": ["quiz", "faithrunner"]
   },
   {
     "id": 32,
     "categorie": "Sacramenten",
     "vraag": "Wat is het sacrament van de wijding?",
-    "antwoord": "Het sacrament waardoor iemand diaken, priester of bisschop wordt."
+    "antwoord": "Het sacrament waardoor iemand diaken, priester of bisschop wordt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 33,
     "categorie": "Sacramenten",
     "vraag": "Wie dient meestal het doopsel toe?",
-    "antwoord": "Een priester of diaken."
+    "antwoord": "Een priester of diaken.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 34,
     "categorie": "Sacramenten",
     "vraag": "Wat is heilig water?",
-    "antwoord": "Water dat door een priester is gezegend."
+    "antwoord": "Water dat door een priester is gezegend.",
+    "suitable": ["quiz"]
   },
   {
     "id": 35,
     "categorie": "Sacramenten",
     "vraag": "Wat is de eerste communie?",
-    "antwoord": "De eerste keer dat een kind deelneemt aan de eucharistie en de communie ontvangt."
+    "antwoord": "De eerste keer dat een kind deelneemt aan de eucharistie en de communie ontvangt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 36,
     "categorie": "Christendom",
     "vraag": "Wie is Jezus?",
-    "antwoord": "De centrale figuur van het christendom en voor christenen de Zoon van God."
+    "antwoord": "De centrale figuur van het christendom en voor christenen de Zoon van God.",
+    "suitable": ["quiz"]
   },
   {
     "id": 37,
     "categorie": "Christendom",
     "vraag": "Wie was Maria?",
-    "antwoord": "De moeder van Jezus."
+    "antwoord": "De moeder van Jezus.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 38,
     "categorie": "Christendom",
     "vraag": "Wie was Jozef?",
-    "antwoord": "De man van Maria en de opvoedvader van Jezus."
+    "antwoord": "De man van Maria en de opvoedvader van Jezus.",
+    "suitable": ["quiz"]
   },
   {
     "id": 39,
     "categorie": "Christendom",
     "vraag": "Waar werd Jezus volgens de Bijbel geboren?",
-    "antwoord": "In Bethlehem."
+    "antwoord": "In Bethlehem.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 40,
     "categorie": "Christendom",
     "vraag": "Waar groeide Jezus op?",
-    "antwoord": "In Nazareth."
+    "antwoord": "In Nazareth.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 41,
     "categorie": "Christendom",
     "vraag": "Hoeveel apostelen had Jezus?",
-    "antwoord": "Twaalf."
+    "antwoord": "Twaalf.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 42,
     "categorie": "Christendom",
     "vraag": "Wie heeft Jezus verraden?",
-    "antwoord": "Judas Iskariot."
+    "antwoord": "Judas Iskariot.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 43,
     "categorie": "Christendom",
     "vraag": "Wie was Petrus?",
-    "antwoord": "Een van Jezus' apostelen."
+    "antwoord": "Een van Jezus' apostelen.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 44,
     "categorie": "Christendom",
     "vraag": "Wat is de kruisiging?",
-    "antwoord": "De terechtstelling van Jezus aan het kruis."
+    "antwoord": "De terechtstelling van Jezus aan het kruis.",
+    "suitable": ["quiz"]
   },
   {
     "id": 45,
     "categorie": "Christendom",
     "vraag": "Wat betekent verrijzenis?",
-    "antwoord": "Dat Jezus volgens het christelijk geloof uit de dood is opgestaan."
+    "antwoord": "Dat Jezus volgens het christelijk geloof uit de dood is opgestaan.",
+    "suitable": ["quiz"]
   },
   {
     "id": 46,
     "categorie": "Christendom",
     "vraag": "Wat is Pinksteren?",
-    "antwoord": "Het feest waarop christenen de komst van de Heilige Geest vieren."
+    "antwoord": "Het feest waarop christenen de komst van de Heilige Geest vieren.",
+    "suitable": ["quiz"]
   },
   {
     "id": 47,
     "categorie": "Christendom",
     "vraag": "Wat is de Drie-eenheid?",
-    "antwoord": "God als Vader, Zoon en Heilige Geest."
+    "antwoord": "God als Vader, Zoon en Heilige Geest.",
+    "suitable": ["quiz"]
   },
   {
     "id": 48,
     "categorie": "Christendom",
     "vraag": "Wie is de paus?",
-    "antwoord": "Het hoofd van de katholieke Kerk."
+    "antwoord": "Het hoofd van de katholieke Kerk.",
+    "suitable": ["quiz"]
   },
   {
     "id": 49,
     "categorie": "Christendom",
     "vraag": "Wat is een priester?",
-    "antwoord": "Een geestelijke die onder andere de mis kan voorgaan."
+    "antwoord": "Een geestelijke die onder andere de mis kan voorgaan.",
+    "suitable": ["quiz"]
   },
   {
     "id": 50,
     "categorie": "Christendom",
     "vraag": "Wat is een klooster?",
-    "antwoord": "Een plaats waar monniken of zusters samen religieus leven."
+    "antwoord": "Een plaats waar monniken of zusters samen religieus leven.",
+    "suitable": ["quiz"]
   },
   {
     "id": 51,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een levensbeschouwing?",
-    "antwoord": "Een manier waarop iemand naar het leven en de wereld kijkt."
+    "antwoord": "Een manier waarop iemand naar het leven en de wereld kijkt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 52,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een atheïst?",
-    "antwoord": "Iemand die niet in een god of goden gelooft."
+    "antwoord": "Iemand die niet in een god of goden gelooft.",
+    "suitable": ["quiz"]
   },
   {
     "id": 53,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een gelovige?",
-    "antwoord": "Iemand die gelooft in een god of een religieuze overtuiging aanhangt."
+    "antwoord": "Iemand die gelooft in een god of een religieuze overtuiging aanhangt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 54,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een agnost?",
-    "antwoord": "Iemand die niet weet of we kunnen weten of er een god bestaat."
+    "antwoord": "Iemand die niet weet of we kunnen weten of er een god bestaat.",
+    "suitable": ["quiz"]
   },
   {
     "id": 55,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat betekent respect?",
-    "antwoord": "Dat je anderen aanvaardt en rekening houdt met hun gevoelens en overtuigingen."
+    "antwoord": "Dat je anderen aanvaardt en rekening houdt met hun gevoelens en overtuigingen.",
+    "suitable": ["quiz"]
   },
   {
     "id": 56,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is verdraagzaamheid?",
-    "antwoord": "Dat je andere meningen, culturen en overtuigingen respecteert."
+    "antwoord": "Dat je andere meningen, culturen en overtuigingen respecteert.",
+    "suitable": ["quiz"]
   },
   {
     "id": 57,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een ritueel?",
-    "antwoord": "Een handeling die volgens vaste gewoontes of regels wordt uitgevoerd."
+    "antwoord": "Een handeling die volgens vaste gewoontes of regels wordt uitgevoerd.",
+    "suitable": ["quiz"]
   },
   {
     "id": 58,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een symbool?",
-    "antwoord": "Een teken of voorwerp dat een bepaalde betekenis heeft."
+    "antwoord": "Een teken of voorwerp dat een bepaalde betekenis heeft.",
+    "suitable": ["quiz"]
   },
   {
     "id": 59,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat betekent solidariteit?",
-    "antwoord": "Dat je anderen steunt en helpt."
+    "antwoord": "Dat je anderen steunt en helpt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 60,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is discriminatie?",
-    "antwoord": "Iemand ongelijk behandelen op basis van bijvoorbeeld afkomst, geloof of geslacht."
+    "antwoord": "Iemand ongelijk behandelen op basis van bijvoorbeeld afkomst, geloof of geslacht.",
+    "suitable": ["quiz"]
   },
   {
     "id": 61,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een humanist?",
-    "antwoord": "Iemand die de mens, menselijke waardigheid en verantwoordelijkheid centraal stelt."
+    "antwoord": "Iemand die de mens, menselijke waardigheid en verantwoordelijkheid centraal stelt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 62,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een waarde?",
-    "antwoord": "Iets wat iemand belangrijk vindt in het leven."
+    "antwoord": "Iets wat iemand belangrijk vindt in het leven.",
+    "suitable": ["quiz"]
   },
   {
     "id": 63,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is een norm?",
-    "antwoord": "Een regel of afspraak over hoe mensen zich gedragen."
+    "antwoord": "Een regel of afspraak over hoe mensen zich gedragen.",
+    "suitable": ["quiz"]
   },
   {
     "id": 64,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat is vrijheid van godsdienst?",
-    "antwoord": "Het recht om zelf een godsdienst te kiezen, te veranderen of niet te geloven."
+    "antwoord": "Het recht om zelf een godsdienst te kiezen, te veranderen of niet te geloven.",
+    "suitable": ["quiz"]
   },
   {
     "id": 65,
     "categorie": "Levensbeschouwingen",
     "vraag": "Wat betekent geweten?",
-    "antwoord": "Het innerlijke besef van wat je goed of fout vindt."
+    "antwoord": "Het innerlijke besef van wat je goed of fout vindt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 66,
     "categorie": "Bijbel",
     "vraag": "Uit hoeveel grote delen bestaat de Bijbel?",
-    "antwoord": "Twee: het Oude Testament en het Nieuwe Testament."
+    "antwoord": "Twee: het Oude Testament en het Nieuwe Testament.",
+    "suitable": ["quiz"]
   },
   {
     "id": 67,
     "categorie": "Bijbel",
     "vraag": "Hoe heet het eerste boek van de Bijbel?",
-    "antwoord": "Genesis."
+    "antwoord": "Genesis.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 68,
     "categorie": "Bijbel",
     "vraag": "Wie waren Adam en Eva?",
-    "antwoord": "De eerste mensen volgens het scheppingsverhaal."
+    "antwoord": "De eerste mensen volgens het scheppingsverhaal.",
+    "suitable": ["quiz"]
   },
   {
     "id": 69,
     "categorie": "Bijbel",
     "vraag": "Wie bouwde volgens de Bijbel een ark?",
-    "antwoord": "Noach."
+    "antwoord": "Noach.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 70,
     "categorie": "Bijbel",
     "vraag": "Wie leidde volgens de Bijbel het volk Israël uit Egypte?",
-    "antwoord": "Mozes."
+    "antwoord": "Mozes.",
+    "suitable": ["quiz", "faithrunner"]
   },
   {
     "id": 71,
     "categorie": "Bijbel",
     "vraag": "Wat zijn de tien geboden?",
-    "antwoord": "Tien belangrijke leefregels uit de Bijbel."
+    "antwoord": "Tien belangrijke leefregels uit de Bijbel.",
+    "suitable": ["quiz"]
   },
   {
     "id": 72,
     "categorie": "Bijbel",
     "vraag": "Wie versloeg Goliath?",
-    "antwoord": "David."
+    "antwoord": "David.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 73,
     "categorie": "Bijbel",
     "vraag": "Wat is een parabel?",
-    "antwoord": "Een kort verhaal met een levensles of diepere betekenis."
+    "antwoord": "Een kort verhaal met een levensles of diepere betekenis.",
+    "suitable": ["quiz"]
   },
   {
     "id": 74,
     "categorie": "Bijbel",
     "vraag": "Wat leert de parabel van de barmhartige Samaritaan?",
-    "antwoord": "Dat je iedereen moet helpen, ook mensen die anders zijn."
+    "antwoord": "Dat je iedereen moet helpen, ook mensen die anders zijn.",
+    "suitable": ["quiz"]
   },
   {
     "id": 75,
     "categorie": "Bijbel",
     "vraag": "Wat is het Onzevader?",
-    "antwoord": "Een belangrijk gebed dat Jezus aan zijn leerlingen leerde."
+    "antwoord": "Een belangrijk gebed dat Jezus aan zijn leerlingen leerde.",
+    "suitable": ["quiz"]
   },
   {
     "id": 76,
     "categorie": "Islam",
     "vraag": "Hoeveel zuilen heeft de islam?",
-    "antwoord": "Vijf."
+    "antwoord": "Vijf.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 77,
     "categorie": "Islam",
     "vraag": "Wat is de eerste zuil van de islam?",
-    "antwoord": "De geloofsbelijdenis."
+    "antwoord": "De geloofsbelijdenis.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 78,
     "categorie": "Islam",
     "vraag": "Hoe vaak per dag bidden moslims traditioneel?",
-    "antwoord": "Vijf keer."
+    "antwoord": "Vijf keer.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 79,
     "categorie": "Islam",
     "vraag": "In welke stad ligt de Kaäba?",
-    "antwoord": "Mekka."
+    "antwoord": "Mekka.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 80,
     "categorie": "Islam",
     "vraag": "Wat is de hadj?",
-    "antwoord": "De bedevaart naar Mekka."
+    "antwoord": "De bedevaart naar Mekka.",
+    "suitable": ["memory", "quiz", "faithrunner"]
   },
   {
     "id": 81,
     "categorie": "Islam",
     "vraag": "Wat is halal?",
-    "antwoord": "Wat volgens de islamitische regels toegestaan is."
+    "antwoord": "Wat volgens de islamitische regels toegestaan is.",
+    "suitable": ["quiz"]
   },
   {
     "id": 82,
     "categorie": "Islam",
     "vraag": "Wat betekent haram?",
-    "antwoord": "Wat volgens de islamitische regels verboden is."
+    "antwoord": "Wat volgens de islamitische regels verboden is.",
+    "suitable": ["quiz"]
   },
   {
     "id": 83,
     "categorie": "Islam",
     "vraag": "Wat is het Offerfeest?",
-    "antwoord": "Een belangrijk islamitisch feest dat verbonden is met het verhaal van Abraham."
+    "antwoord": "Een belangrijk islamitisch feest dat verbonden is met het verhaal van Abraham.",
+    "suitable": ["quiz"]
   },
   {
     "id": 84,
     "categorie": "Hindoeïsme en boeddhisme",
     "vraag": "Wat betekent karma?",
-    "antwoord": "Het idee dat je daden gevolgen hebben."
+    "antwoord": "Het idee dat je daden gevolgen hebben.",
+    "suitable": ["quiz"]
   },
   {
     "id": 85,
     "categorie": "Hindoeïsme en boeddhisme",
     "vraag": "Wat is reïncarnatie?",
-    "antwoord": "Het geloof dat iemand na de dood opnieuw geboren wordt."
+    "antwoord": "Het geloof dat iemand na de dood opnieuw geboren wordt.",
+    "suitable": ["quiz"]
   },
   {
     "id": 86,
     "categorie": "Hindoeïsme en boeddhisme",
     "vraag": "Wat is nirwana?",
-    "antwoord": "Een toestand waarin je bevrijd bent van lijden en verlangens."
+    "antwoord": "Een toestand waarin je bevrijd bent van lijden en verlangens.",
+    "suitable": ["quiz"]
   },
   {
     "id": 87,
     "categorie": "Hindoeïsme en boeddhisme",
     "vraag": "Welk dier wordt in het hindoeïsme vaak als heilig beschouwd?",
-    "antwoord": "De koe."
+    "antwoord": "De koe.",
+    "suitable": ["quiz", "faithrunner"]
   },
   {
     "id": 88,
     "categorie": "Hindoeïsme en boeddhisme",
     "vraag": "Wat is meditatie?",
-    "antwoord": "Een oefening om je aandacht en gedachten tot rust te brengen."
+    "antwoord": "Een oefening om je aandacht en gedachten tot rust te brengen.",
+    "suitable": ["quiz"]
   },
   {
     "id": 89,
     "categorie": "Hindoeïsme en boeddhisme",
     "vraag": "Wat is een mantra?",
-    "antwoord": "Een woord, klank of zin die herhaald wordt tijdens meditatie of gebed."
+    "antwoord": "Een woord, klank of zin die herhaald wordt tijdens meditatie of gebed.",
+    "suitable": ["quiz"]
   },
   {
     "id": 90,
     "categorie": "Hindoeïsme en boeddhisme",
     "vraag": "Wat betekent ahimsa?",
-    "antwoord": "Geweldloosheid en respect voor alle levende wezens."
+    "antwoord": "Geweldloosheid en respect voor alle levende wezens.",
+    "suitable": ["quiz"]
   },
   {
     "id": 91,
     "categorie": "Algemene kennis",
     "vraag": "Wat is een bedevaart?",
-    "antwoord": "Een religieuze reis naar een heilige plaats."
+    "antwoord": "Een religieuze reis naar een heilige plaats.",
+    "suitable": ["quiz"]
   },
   {
     "id": 92,
     "categorie": "Algemene kennis",
     "vraag": "Wat is een feestdag in een godsdienst?",
-    "antwoord": "Een speciale dag waarop gelovigen iets belangrijks herdenken of vieren."
+    "antwoord": "Een speciale dag waarop gelovigen iets belangrijks herdenken of vieren.",
+    "suitable": ["quiz"]
   },
   {
     "id": 93,
     "categorie": "Algemene kennis",
     "vraag": "Wat is vasten?",
-    "antwoord": "Een bepaalde tijd minder of niet eten en soms drinken om religieuze of persoonlijke redenen."
+    "antwoord": "Een bepaalde tijd minder of niet eten en soms drinken om religieuze of persoonlijke redenen.",
+    "suitable": ["quiz"]
   },
   {
     "id": 94,
     "categorie": "Algemene kennis",
     "vraag": "Wat is bidden?",
-    "antwoord": "Praten met God of een hogere macht."
+    "antwoord": "Praten met God of een hogere macht.",
+    "suitable": ["quiz"]
   },
   {
     "id": 95,
     "categorie": "Algemene kennis",
     "vraag": "Wat is een geestelijke?",
-    "antwoord": "Iemand met een religieuze functie binnen een godsdienst."
+    "antwoord": "Iemand met een religieuze functie binnen een godsdienst.",
+    "suitable": ["quiz"]
   },
   {
     "id": 96,
     "categorie": "Algemene kennis",
     "vraag": "Wat is een heilige?",
-    "antwoord": "Iemand die binnen een godsdienst als bijzonder voorbeeldig of heilig wordt beschouwd."
+    "antwoord": "Iemand die binnen een godsdienst als bijzonder voorbeeldig of heilig wordt beschouwd.",
+    "suitable": ["quiz"]
   },
   {
     "id": 97,
     "categorie": "Algemene kennis",
     "vraag": "Wat is een religieus feest?",
-    "antwoord": "Een feest dat verbonden is met een godsdienstige gebeurtenis of overtuiging."
+    "antwoord": "Een feest dat verbonden is met een godsdienstige gebeurtenis of overtuiging.",
+    "suitable": ["quiz"]
   },
   {
     "id": 98,
     "categorie": "Algemene kennis",
     "vraag": "Wat betekent interreligieuze dialoog?",
-    "antwoord": "Een gesprek tussen mensen van verschillende godsdiensten."
+    "antwoord": "Een gesprek tussen mensen van verschillende godsdiensten.",
+    "suitable": ["quiz"]
   },
   {
     "id": 99,
     "categorie": "Algemene kennis",
     "vraag": "Waarom is respect tussen verschillende godsdiensten belangrijk?",
-    "antwoord": "Om vreedzaam samen te leven en elkaar beter te begrijpen."
+    "antwoord": "Om vreedzaam samen te leven en elkaar beter te begrijpen.",
+    "suitable": ["quiz"]
   },
   {
     "id": 100,
     "categorie": "Algemene kennis",
     "vraag": "Kun je respectvol omgaan met iemand die niet in God gelooft?",
-    "antwoord": "Ja, iedereen verdient respect, ongeacht zijn of haar overtuiging."
+    "antwoord": "Ja, iedereen verdient respect, ongeacht zijn of haar overtuiging.",
+    "suitable": ["quiz"]
   }
 ]
