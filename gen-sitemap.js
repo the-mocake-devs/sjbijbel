@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const books = fs.readdirSync("bijbel").filter(f => f.endsWith(".html")).map(f => "/bijbel/" + f.replace(".html", ""));
 const guides = fs.readdirSync("gids").filter(f => f.endsWith(".html")).map(f => "/gids/" + f.replace(".html", ""));
-const core = ["/", "/lezen", "/bijbelboeken", "/gids", "/quest", "/about", "/privacy", "/contact"];
+const core = ["/", "/lezen/", "/bijbelboeken", "/gids", "/quest/", "/about", "/privacy", "/contact"];
 const urls = [...core, ...books, ...guides];
 
 const lines = urls.map(u => [
